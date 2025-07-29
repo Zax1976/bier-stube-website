@@ -560,18 +560,19 @@
             }
             
             .logo-frame img {
-                height: 6rem !important; /* 96px - smaller than h-24 for very small screens */
-                max-height: 20vh; /* Don't take up more than 20% of viewport height */
+                height: auto; /* Let natural aspect ratio determine height */
+                max-height: 80px; /* Reasonable limit for mobile */
                 width: auto;
-                max-width: 100%;
+                max-width: 80%; /* Prevent edge overflow */
+                object-fit: contain;
             }
         }
         
         /* Medium mobile screens (larger phones, small tablets) */
         @media (max-width: 640px) and (min-width: 481px) {
             .logo-frame img {
-                height: 5.5rem !important; /* 88px - middle ground */
-                max-height: 18vh;
+                max-height: 88px; /* Slightly larger for medium screens */
+                max-width: 85%;
             }
         }
         
@@ -587,8 +588,8 @@
             }
             
             .logo-frame img {
-                height: 5rem !important; /* 80px for very small screens */
-                max-height: 15vh; /* Don't take up more than 15% of viewport height */
+                max-height: 70px; /* Smaller for very small screens */
+                max-width: 75%;
             }
             
             /* Adjust hero text spacing for small screens */
@@ -606,8 +607,8 @@
             }
             
             .logo-frame img {
-                height: 4rem !important; /* 64px for very small screens */
-                max-height: 12vh;
+                max-height: 60px; /* Even smaller for tiny screens */
+                max-width: 70%;
             }
             
             .hero-title {
@@ -721,7 +722,7 @@
         <div class="relative z-10 text-center px-4">
             <div class="mb-8 hero-logo">
                 <div class="inline-block logo-frame p-4 sm:p-6 rounded">
-                    <img src="src/assets/images/images.jpg" alt="Bier Stube" class="h-24 sm:h-32 md:h-40 w-auto max-w-full">
+                    <img src="src/assets/images/images.jpg" alt="Bier Stube" class="w-auto" style="height: auto; max-height: 160px;">
                 </div>
             </div>
             
