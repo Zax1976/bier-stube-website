@@ -143,6 +143,11 @@
             background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 2px 3px rgba(192,192,192,0.3);
             position: relative;
+            transition: all 0.3s ease; /* Smooth transitions on resize */
+        }
+        
+        .logo-frame img {
+            transition: all 0.3s ease; /* Smooth logo scaling */
         }
         
         .logo-frame::before {
@@ -542,6 +547,73 @@
             .wood-panel::before {
                 animation-duration: 30s;
             }
+            
+            /* Mobile logo optimizations */
+            .hero-logo {
+                margin-bottom: 1.5rem; /* Reduce spacing on mobile */
+            }
+            
+            .logo-frame {
+                padding: 1rem !important; /* Ensure smaller padding on mobile */
+                max-width: calc(100vw - 2rem); /* Prevent overflow */
+                box-sizing: border-box;
+            }
+            
+            .logo-frame img {
+                height: 6rem !important; /* 96px - smaller than h-24 for very small screens */
+                max-height: 20vh; /* Don't take up more than 20% of viewport height */
+                width: auto;
+                max-width: 100%;
+            }
+        }
+        
+        /* Medium mobile screens (larger phones, small tablets) */
+        @media (max-width: 640px) and (min-width: 481px) {
+            .logo-frame img {
+                height: 5.5rem !important; /* 88px - middle ground */
+                max-height: 18vh;
+            }
+        }
+        
+        /* Extra small screens (phones in portrait) */
+        @media (max-width: 480px) {
+            .hero-logo {
+                margin-bottom: 1rem;
+            }
+            
+            .logo-frame {
+                padding: 0.75rem !important;
+                max-width: calc(100vw - 1rem);
+            }
+            
+            .logo-frame img {
+                height: 5rem !important; /* 80px for very small screens */
+                max-height: 15vh; /* Don't take up more than 15% of viewport height */
+            }
+            
+            /* Adjust hero text spacing for small screens */
+            .hero-title {
+                font-size: 3rem !important; /* Smaller than text-6xl */
+                line-height: 1.1;
+            }
+        }
+        
+        /* Very small screens (older phones) */
+        @media (max-width: 360px) {
+            .logo-frame {
+                padding: 0.5rem !important;
+                max-width: calc(100vw - 0.5rem);
+            }
+            
+            .logo-frame img {
+                height: 4rem !important; /* 64px for very small screens */
+                max-height: 12vh;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem !important;
+                margin-bottom: 1rem;
+            }
         }
         
         /* Respect reduced motion preferences */
@@ -648,8 +720,8 @@
         
         <div class="relative z-10 text-center px-4">
             <div class="mb-8 hero-logo">
-                <div class="inline-block logo-frame p-6 rounded">
-                    <img src="src/assets/images/images.jpg" alt="Bier Stube" class="h-40 w-auto">
+                <div class="inline-block logo-frame p-4 sm:p-6 rounded">
+                    <img src="src/assets/images/images.jpg" alt="Bier Stube" class="h-24 sm:h-32 md:h-40 w-auto max-w-full">
                 </div>
             </div>
             
