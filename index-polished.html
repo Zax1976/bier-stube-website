@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bier Stube | Columbus Institution Since 1966</title>
+    <link rel="icon" type="image/x-icon" href="src/assets/images/images.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'scarlet': '#BB0000',
+                        'grey': '#666666',
+                        'scarlet-dark': '#990000',
+                        'cream': '#FAF8F5',
+                        'wood': '#3E2723',
+                        'gold': '#D4AF37',
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Cambria', 'serif'],
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        .font-logo { 
+            font-family: 'UnifrakturMaguntia', serif; 
+            font-weight: normal;
+        }
+        .font-display { font-family: 'Oswald', sans-serif; }
+        .font-elegant { font-family: 'Playfair Display', serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .logo-frame {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 2px 3px rgba(212,175,55,0.3);
+        }
+        
+        .vintage-border {
+            border: 3px double #D4AF37;
+            box-shadow: inset 0 0 0 1px #D4AF37, 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .wood-panel {
+            background: linear-gradient(180deg, #3E2723 0%, #2E1A1A 100%);
+            position: relative;
+        }
+        
+        .premium-button {
+            background: linear-gradient(135deg, #BB0000 0%, #990000 100%);
+            border: 2px solid #D4AF37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .premium-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        
+        .divider-ornament {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #D4AF37 20%, #D4AF37 80%, transparent);
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .divider-ornament::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: #D4AF37;
+            border: 2px solid #1a1a1a;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* Better readability for text sections */
+        .reading-width {
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="font-sans bg-cream text-gray-900 smooth-scroll">
+    <!-- Premium Header -->
+    <header class="bg-black/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo and Name -->
+                <div class="flex items-center">
+                    <img src="src/assets/images/images.jpg" alt="Bier Stube Logo" class="h-16 w-auto mr-4">
+                    <div class="hidden sm:block">
+                        <h1 class="font-logo text-3xl text-white">Bier Stube</h1>
+                        <p class="text-gold text-xs tracking-widest uppercase">EST. 1966</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav id="desktop-nav" class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Home</a>
+                    <a href="#legacy" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Our Legacy</a>
+                    <a href="#experience" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Experience</a>
+                    <a href="#merchandise" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Merchandise</a>
+                    <a href="#events" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Events</a>
+                    <a href="#visit" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm">Visit</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden md:block">
+                    <a href="#visit" class="premium-button text-white font-display font-semibold py-3 px-8 rounded">
+                        Coming 2025
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gold p-2" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Home</a>
+                    <a href="#legacy" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Our Legacy</a>
+                    <a href="#experience" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Experience</a>
+                    <a href="#merchandise" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Merchandise</a>
+                    <a href="#events" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Events</a>
+                    <a href="#visit" class="text-gray-300 hover:text-gold transition-colors font-display font-medium tracking-wide uppercase text-sm py-2">Visit</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 animate-fade-in-up">
+            <div class="mb-8">
+                <div class="inline-block logo-frame p-6 rounded">
+                    <img src="src/assets/images/images.jpg" alt="Bier Stube" class="h-40 w-auto">
+                </div>
+            </div>
+            
+            <h1 class="font-logo text-6xl md:text-8xl text-white mb-4 text-shadow">
+                Bier Stube
+            </h1>
+            
+            <div class="divider-ornament"></div>
+            
+            <p class="font-display text-xl md:text-2xl text-gold mb-8 tracking-widest uppercase">
+                Columbus Institution • Since 1966
+            </p>
+            
+            <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                After nearly 60 years serving the Columbus community, we're returning stronger than ever. 
+                The legendary dive bar that defined campus culture is preparing for its next chapter.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#legacy" class="premium-button text-white font-display font-semibold py-4 px-10 rounded inline-block">
+                    Discover Our Story
+                </a>
+                <a href="#merchandise" class="border-2 border-gold text-gold hover:bg-gold hover:text-black font-display font-semibold py-4 px-10 rounded transition-all uppercase tracking-wide inline-block">
+                    Shop Merchandise
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gold animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="py-32 bg-cream relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="font-logo text-5xl md:text-6xl text-gray-900 mb-4">The Stube Legacy</h2>
+                <div class="divider-ornament"></div>
+            </div>
+            
+            <div class="bg-white p-12 rounded-lg shadow-xl mb-16">
+                <h3 class="font-display text-3xl mb-8 text-scarlet text-center">Nearly Six Decades of History</h3>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p class="text-gray-700">
+                        Since 1966, the Bier Stube stood as more than just a bar—it was a rite of passage for Ohio State students, 
+                        a sanctuary for locals, and a time capsule of authentic Columbus culture. From its humble beginnings as a 
+                        plumbing store to becoming the most beloved dive bar in the University District, every inch of worn wood 
+                        and every faded photograph told a story.
+                    </p>
+                    <p class="text-gray-700">
+                        Under Craig Kempton's stewardship since 1996—first as a doorman, then as owner from 2004—the Stube 
+                        maintained its authentic character. "Keep it cheap, keep it cool" wasn't just a motto; it was a promise 
+                        to the community. Where else could you find 60-ounce pitchers for $5 and know every dollar saved meant 
+                        another memory made?
+                    </p>
+                    <p class="text-gray-700">
+                        When we closed our doors at 1497 N. High Street in September 2024, it wasn't goodbye—it was "see you later." 
+                        Every piece of the original bar, from the legendary jukebox to the weathered bar stools, has been preserved, 
+                        waiting for our triumphant return.
+                    </p>
+                </div>
+            </div>
+                
+            <div class="wood-panel p-8 rounded-lg shadow-2xl max-w-2xl mx-auto">
+                    <div class="bg-black/80 p-8 rounded relative z-10">
+                        <h4 class="font-logo text-3xl text-gold mb-6">By The Numbers</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gold/30 pb-2">
+                                <span class="text-gray-300">Years of Service</span>
+                                <span class="font-display text-2xl text-white">58</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gold/30 pb-2">
+                                <span class="text-gray-300">Pitchers Poured</span>
+                                <span class="font-display text-2xl text-white">1M+</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gold/30 pb-2">
+                                <span class="text-gray-300">Game Days Celebrated</span>
+                                <span class="font-display text-2xl text-white">600+</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gold/30 pb-2">
+                                <span class="text-gray-300">Lives Changed</span>
+                                <span class="font-display text-2xl text-white">∞</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Reopening</span>
+                                <span class="font-display text-2xl text-gold">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-logo text-5xl md:text-6xl mb-4">The Authentic Experience</h2>
+                <div class="divider-ornament"></div>
+                <p class="text-gray-300 text-xl max-w-3xl mx-auto">
+                    We're not just reopening a bar. We're resurrecting a Columbus institution with the same 
+                    uncompromising commitment to authenticity that made us legendary.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 border border-gold/20 rounded-lg hover:border-gold/50 transition-all">
+                    <div class="text-gold text-5xl mb-4">◈</div>
+                    <h3 class="font-display text-2xl mb-4 text-gold">The Original Everything</h3>
+                    <p class="text-gray-300">
+                        Every salvaged piece from 1497 N. High—the worn bar top, the legendary jukebox, 
+                        even the mismatched stools—will find its place in our new home. This isn't a 
+                        replica; it's a resurrection.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 border border-gold/20 rounded-lg hover:border-gold/50 transition-all">
+                    <div class="text-gold text-5xl mb-4">◈</div>
+                    <h3 class="font-display text-2xl mb-4 text-gold">Honest Prices</h3>
+                    <p class="text-gray-300">
+                        In an era of $18 cocktails, we remain committed to Craig's philosophy: 
+                        "Keep it cheap, keep it cool." Expect the same honest prices that made 
+                        us the last authentic dive in Columbus.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 border border-gold/20 rounded-lg hover:border-gold/50 transition-all">
+                    <div class="text-gold text-5xl mb-4">◈</div>
+                    <h3 class="font-display text-2xl mb-4 text-gold">Sacred Traditions</h3>
+                    <p class="text-gray-300">
+                        Game day rituals, late-night philosophy debates, first dates, last calls—every 
+                        tradition that made the Stube special will continue. Some things are too 
+                        important to change.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section id="merchandise" class="py-24 bg-cream">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-logo text-5xl md:text-6xl text-gray-900 mb-4">Stube Merchandise</h2>
+                <div class="divider-ornament"></div>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto">
+                    Take home a piece of Columbus history. Every purchase supports our comeback story.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Classic T-Shirt -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">👕</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Classic Tee</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Stube Classic T-Shirt</h3>
+                        <p class="text-gray-400 mb-4">Vintage black tee with the original Bier Stube logo. Soft cotton blend that gets better with age.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$24.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pint Glass -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">🍺</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Pint Glass</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Official Pint Glass</h3>
+                        <p class="text-gray-400 mb-4">Heavy-duty 16oz glass with etched Bier Stube logo. The same glasses we'll use when we reopen.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$14.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vintage Hoodie -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">🧥</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Hoodie</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Vintage Hoodie</h3>
+                        <p class="text-gray-400 mb-4">Premium heavyweight hoodie with embroidered logo. Perfect for those chilly game days.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$54.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bar Stool Replica -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">🪑</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Bar Stool</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Replica Bar Stool</h3>
+                        <p class="text-gray-400 mb-4">Authentic replica of our famous mismatched bar stools. Limited edition collector's item.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$149.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Pre-Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jukebox USB -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">🎵</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Jukebox USB</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Jukebox Greatest Hits</h3>
+                        <p class="text-gray-400 mb-4">USB drive with 500+ songs from our legendary jukebox. The soundtrack of 58 years.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$19.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy Package -->
+                <div class="product-card rounded-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">📦</div>
+                            <p class="text-gold font-display uppercase tracking-wide">Legacy Bundle</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black/90">
+                        <h3 class="font-display text-xl text-white mb-2">Ultimate Legacy Package</h3>
+                        <p class="text-gray-400 mb-4">T-shirt, hoodie, 2 pint glasses, and VIP reopening invitation. The complete collection.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-2xl text-gold">$119.99</span>
+                            <button class="premium-button text-white px-6 py-2 text-sm rounded">
+                                Limited Edition
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600 italic mb-4">All proceeds support the Bier Stube comeback fund</p>
+                <a href="#" class="border-2 border-scarlet text-scarlet hover:bg-scarlet hover:text-white font-display font-semibold py-3 px-8 rounded transition-all uppercase tracking-wide inline-block">
+                    View Full Collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-24 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-logo text-5xl md:text-6xl mb-4">Traditions Continue</h2>
+                <div class="divider-ornament"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="wood-panel p-8 rounded-lg shadow-xl">
+                    <div class="relative z-10">
+                        <h3 class="font-logo text-4xl text-gold mb-6">Game Day Central</h3>
+                        <p class="text-gray-300 mb-6">
+                            For 58 years, we've been the unofficial headquarters for Buckeye faithful. 
+                            Our new location will continue this sacred tradition with expanded capacity 
+                            and the same electric atmosphere.
+                        </p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center">
+                                <span class="text-scarlet mr-3">►</span>
+                                Every game on multiple screens
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-scarlet mr-3">►</span>
+                                Traditional game day specials
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-scarlet mr-3">►</span>
+                                Standing room only energy
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-scarlet mr-3">►</span>
+                                Victory celebration headquarters
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg border-l-4 border-gold">
+                        <h4 class="font-display text-xl font-bold mb-2 text-white">Live Music Returns</h4>
+                        <p class="text-gray-300">
+                            The stage that launched a thousand local bands will rise again. 
+                            Expect the same eclectic mix of talent that made Tuesday nights legendary.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg border-l-4 border-gold">
+                        <h4 class="font-display text-xl font-bold mb-2 text-white">The Jukebox Lives</h4>
+                        <p class="text-gray-300">
+                            Our carefully curated jukebox—saved from the original location—returns 
+                            with every classic intact. Some things can't be improved, only preserved.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg border-l-4 border-gold">
+                        <h4 class="font-display text-xl font-bold mb-2 text-white">Community Nights</h4>
+                        <p class="text-gray-300">
+                            Trivia, open mics, and those spontaneous gatherings that made us more 
+                            than a bar—we were Columbus's living room.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Section -->
+    <section id="visit" class="py-24 bg-cream">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-logo text-5xl md:text-6xl mb-4 text-gray-900">The Return</h2>
+            <div class="divider-ornament"></div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="vintage-border p-12 bg-white rounded-lg shadow-2xl">
+                    <h3 class="font-logo text-4xl text-scarlet mb-6">Coming 2025</h3>
+                    
+                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                        The exact location remains under wraps as we finalize our triumphant return to Columbus. 
+                        What we can promise: the same authentic Stube experience that made us legendary, 
+                        in a space worthy of our next 60 years.
+                    </p>
+                    
+                    <div class="bg-scarlet/10 border border-scarlet/30 rounded p-6 mb-8">
+                        <p class="text-scarlet font-display text-lg font-semibold mb-2">
+                            BE FIRST TO KNOW
+                        </p>
+                        <p class="text-gray-700">
+                            Join our mailing list for exclusive updates on our reopening, 
+                            including location reveal and opening week specials.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-2 text-gray-600">
+                        <p>Follow the journey:</p>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <a href="#" class="text-scarlet hover:text-scarlet-dark transition-colors font-semibold">Facebook</a>
+                            <span class="text-gray-400">•</span>
+                            <a href="#" class="text-scarlet hover:text-scarlet-dark transition-colors font-semibold">Instagram</a>
+                            <span class="text-gray-400">•</span>
+                            <a href="#" class="text-scarlet hover:text-scarlet-dark transition-colors font-semibold">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <p class="text-gray-600 italic text-lg">
+                        "Some bars serve drinks. We serve memories. See you soon, Columbus."
+                    </p>
+                    <p class="text-scarlet font-display mt-4 text-xl">
+                        — Craig Kempton, Owner
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gold/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <img src="src/assets/images/images.jpg" alt="Bier Stube" class="h-12 w-auto mr-3">
+                <div>
+                    <h3 class="font-logo text-2xl">Bier Stube</h3>
+                    <p class="text-gold text-xs tracking-widest">EST. 1966 • RETURNING 2025</p>
+                </div>
+            </div>
+            
+            <p class="text-gray-400 mb-8">
+                A Columbus Institution • Keep It Cheap, Keep It Cool
+            </p>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-500 text-sm">
+                    © 2025 Bier Stube. All memories preserved.
+                </p>
+                <p class="text-scarlet font-semibold mt-2">
+                    OH-IO
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileNav = document.getElementById('mobile-nav');
+                    if (!mobileNav.classList.contains('hidden')) {
+                        mobileNav.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Removed parallax effect for better readability
+    </script>
+</body>
+</html>

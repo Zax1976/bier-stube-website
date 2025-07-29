@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bier Stube - Columbus | 234 King Avenue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'scarlet': '#BB0000',
+                        'grey': '#666666',
+                        'scarlet-dark': '#990000',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .btn-primary {
+            @apply bg-scarlet hover:bg-scarlet-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+        }
+        .btn-secondary {
+            @apply border-2 border-scarlet text-scarlet hover:bg-scarlet hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="src/assets/images/images.jpg" alt="Bier Stube Logo" class="h-12 w-12 rounded-full object-cover">
+                    <div>
+                        <h1 class="text-2xl font-serif font-bold text-scarlet">Bier Stube</h1>
+                        <p class="text-sm text-grey">Columbus, Ohio</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-grey hover:text-scarlet transition-colors font-medium">Home</a>
+                    <a href="#story" class="text-grey hover:text-scarlet transition-colors font-medium">Our Story</a>
+                    <a href="#merch" class="text-grey hover:text-scarlet transition-colors font-medium">Merch Store</a>
+                    <a href="#events" class="text-grey hover:text-scarlet transition-colors font-medium">Events</a>
+                    <a href="#contact" class="text-grey hover:text-scarlet transition-colors font-medium">Contact</a>
+                </nav>
+
+                <!-- Game Day CTA -->
+                <div class="hidden md:block">
+                    <a href="#events" class="bg-scarlet hover:bg-scarlet-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Game Day Specials
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMenu()">
+                    <div class="w-6 h-6 flex flex-col justify-center">
+                        <span class="block h-0.5 bg-scarlet mb-1"></span>
+                        <span class="block h-0.5 bg-scarlet mb-1"></span>
+                        <span class="block h-0.5 bg-scarlet"></span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden pb-4 hidden">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#home" class="text-grey hover:text-scarlet transition-colors font-medium py-2">Home</a>
+                    <a href="#story" class="text-grey hover:text-scarlet transition-colors font-medium py-2">Our Story</a>
+                    <a href="#merch" class="text-grey hover:text-scarlet transition-colors font-medium py-2">Merch Store</a>
+                    <a href="#events" class="text-grey hover:text-scarlet transition-colors font-medium py-2">Events</a>
+                    <a href="#contact" class="text-grey hover:text-scarlet transition-colors font-medium py-2">Contact</a>
+                    <a href="#events" class="bg-scarlet hover:bg-scarlet-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                        Game Day Specials
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-gradient-to-r from-scarlet to-scarlet-dark text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <img src="src/assets/images/images.jpg" alt="Bier Stube Logo" class="h-32 w-32 rounded-full object-cover mx-auto mb-8 shadow-2xl">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">Bier Stube</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Columbus's beloved dive bar is reopening at 234 King Avenue! 
+                    60 years of tradition meets modern comfort.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#merch" class="bg-white text-scarlet px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+                        Shop Merch
+                    </a>
+                    <a href="#events" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-scarlet transition-colors">
+                        Game Day Specials
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section id="story" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">Welcome Back to Bier Stube</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        After nearly 60 years on High Street, we're excited to bring our 
+                        legendary atmosphere to a new home at 234 King Avenue. Same great 
+                        beer, same Buckeye spirit, new location!
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="text-4xl mb-4">🍺</div>
+                        <h3 class="text-xl font-bold mb-2">Great Beer</h3>
+                        <p class="text-gray-600">German imports, local favorites, and game day specials</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="text-4xl mb-4">🏈</div>
+                        <h3 class="text-xl font-bold mb-2">Buckeye Pride</h3>
+                        <p class="text-gray-600">The ultimate destination for OSU game day celebrations</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="text-4xl mb-4">🎵</div>
+                        <h3 class="text-xl font-bold mb-2">Live Music</h3>
+                        <p class="text-gray-600">Local bands, karaoke nights, and classic jukebox hits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-16 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-8">Events & Game Day</h2>
+                <div class="bg-scarlet text-white p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-4">🏈 OSU Game Day Specials</h3>
+                    <p class="text-lg">
+                        Join us for every Buckeye game with special pricing on beer, 
+                        food specials, and the best game day atmosphere in Columbus!
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="text-xl font-bold mb-2">Live Music</h4>
+                        <p class="text-gray-600">Local bands every Friday and Saturday night</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="text-xl font-bold mb-2">Trivia Night</h4>
+                        <p class="text-gray-600">Test your knowledge every Wednesday at 7PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Merch Section -->
+        <section id="merch" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-8">Shop Bier Stube Merchandise</h2>
+                <p class="text-xl text-gray-600 mb-8">Show your Bier Stube pride with our official merchandise!</p>
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <p class="text-lg text-gray-700">🚧 Store coming soon! Check back for t-shirts, glasses, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-8">Contact & Visit</h2>
+                <div class="bg-white p-8 rounded-lg inline-block shadow-lg">
+                    <h3 class="text-2xl font-bold text-scarlet mb-4">234 King Avenue</h3>
+                    <p class="text-xl text-gray-700 mb-4">Columbus, OH 43201</p>
+                    <div class="text-left max-w-md">
+                        <p class="text-gray-600 mb-4">
+                            <strong>Hours:</strong><br>
+                            Monday - Thursday: 4PM - 12AM<br>
+                            Friday - Saturday: 2PM - 2AM<br>
+                            Sunday: 12PM - 12AM<br>
+                            <span class="text-scarlet font-semibold">Game Days: Extended Hours</span>
+                        </p>
+                        <p class="text-gray-600">
+                            <strong>Phone:</strong> Coming Soon<br>
+                            <strong>Email:</strong> info@bierstube.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo & Description -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="src/assets/images/images.jpg" alt="Bier Stube Logo" class="h-12 w-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-scarlet">Bier Stube</h3>
+                            <p class="text-gray-400">Since 1965</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Columbus's beloved dive bar, now reopening at 234 King Avenue. 
+                        Experience 60 years of tradition with OSU game day specials, 
+                        German beer, and community spirit.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-300 hover:text-white transition-colors">Home</a>
+                        <a href="#story" class="block text-gray-300 hover:text-white transition-colors">Our Story</a>
+                        <a href="#merch" class="block text-gray-300 hover:text-white transition-colors">Merch Store</a>
+                        <a href="#events" class="block text-gray-300 hover:text-white transition-colors">Events</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Visit Us</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>234 King Avenue</p>
+                        <p>Columbus, OH 43201</p>
+                        <p class="mt-4">
+                            <span class="text-scarlet font-semibold">Hours:</span><br>
+                            Mon-Thu: 4PM - 12AM<br>
+                            Fri-Sat: 2PM - 2AM<br>
+                            Sun: 12PM - 12AM<br>
+                            <span class="text-yellow-400">Game Days: Extended Hours</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Bier Stube Columbus. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mt-2 md:mt-0">
+                    🏈 <span class="text-scarlet font-semibold">Go Bucks!</span> 🍺
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
